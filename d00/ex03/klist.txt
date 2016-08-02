@@ -1,0 +1,2 @@
+Jul 12 19:27:31 2016  Jul 13 05:27:31 2016  krbtgt/42.US.ORG@42.US.ORG
+Jul 12 19:29:01 2016  Jul 13 05:27:31 2016  host/vgs-fn1.42.us.org@42.US.ORG
