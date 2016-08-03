@@ -11,20 +11,22 @@
 # **************************************************************************** #
 
 NAME = rush-2
-SRC = 
-OFILES = 
-INCLUDES = 
+SRC = rush_01_out.c rush_00_out.c rush_03_out.c ft_find_dimensions.c ft_rush_name.c whatrush.c rush_02_out.c rush_04_out.c
+OFILES = rush_01_out.o rush_00_out.o rush_03_out.o ft_find_dimensions.o ft_rush_name.o whatrush.o rush_02_out.o rush_04_out.o
+INCLUDES = rush_ref_output.h
 
 all: $(NAME)
 	
 $(NAME):
-	gcc -Wall -Wextra -Werror $(SRC) $(INCLUDES)
+	gcc -Wall -Wextra -Werror -c $(SRC) $(INCLUDES)
+	gcc -Wall -Wextra -Werror $(OFILES) -o $(NAME)
 
 clean:
-	rm -r 
+	rm -r $(OFILES)
 
-fclean:
-	clean
-	rm -r $(NAME)
+fclean: clean
+	rm $(NAME)
 
-rc: fclean all
+re: fclean all
+
+

@@ -16,8 +16,6 @@
 #include <stdlib.h>
 #include "rush_ref_output.h"
 
-#define BUFSIZE 1
-
 char	*read_rush(void)
 {
 	char	buf[2];
@@ -27,8 +25,7 @@ char	*read_rush(void)
 	int		y;
 
 	i = 0;
-	str = (char*)malloc(sizeof(char) * 4000);
-	if (!str)
+	if (!(str = (char*)malloc(sizeof(char) * (INTBOUND * INTBOUND) + (INTBOUND) + 1)))
 		return (0);
 	while (read(0, buf, 1) != 0)
 	{
@@ -62,21 +59,16 @@ void	ft_what_rush(char *str, int x, int y)
 
 	i = 0;
 	k = 0;
-	if (str[i] == 'o')
-		if ((ft_strcmp(str, ft_rush00(x, y))) == 0)
-			ft_rush_name(0, x, y + (k++ * 0));
-	if (str[i] == '/')
-		if ((ft_strcmp(str, ft_rush01(x, y))) == 0)
-			ft_rush_name(1, x, y + (k++ * 0));
-	if (str[i] == 'A')
-	{
-		if ((ft_strcmp(str, ft_rush02(x, y))) == 0)
-			k = 2;
-		if ((ft_strcmp(str, ft_rush03(x, y))) == 0)
-			k = k + 3;
-		if ((ft_strcmp(str, ft_rush04(x, y))) == 0)
-			k = k + 10;
-	}
+	if ((ft_strcmp(str, ft_rush00(x, y))) == 0)
+		ft_rush_name(0, x, y + (k++ * 0));
+	if ((ft_strcmp(str, ft_rush01(x, y))) == 0)
+		ft_rush_name(1, x, y + (k++ * 0));
+	if ((ft_strcmp(str, ft_rush02(x, y))) == 0)
+		k = 2;
+	if ((ft_strcmp(str, ft_rush03(x, y))) == 0)
+		k = k + 3;
+	if ((ft_strcmp(str, ft_rush04(x, y))) == 0)
+		k = k + 10;
 	if (k > 1)
 		ft_rush_name(k, x, y);
 	else if (k == 0)

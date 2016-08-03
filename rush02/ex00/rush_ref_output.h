@@ -12,6 +12,8 @@
 
 #ifndef RUSH_REF_OUTPUT_H
 # define RUSH_REF_OUTPUT_H
+# define BUFSIZE 1
+# define INTBOUND 2147483647
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
@@ -35,7 +37,7 @@ char	*rush02_store_last_line(int x, int i, char *str);
 char	*ft_rush03(int x, int y);
 char	*rush03_store_first_line(int x, int i, char *str);
 char	*rush03_store_middle_line(int x, int i, char *str);
-char	*rush03_store_last_line(int x,  int i, char *str);
+char	*rush03_store_last_line(int x, int i, char *str);
 char	*ft_rush04(int x, int y);
 char	*rush04_store_first_line(int x, int i, char *str);
 char	*rush04_store_middle_line(int x, int i, char *str);

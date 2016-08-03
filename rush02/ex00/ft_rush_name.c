@@ -60,9 +60,9 @@ void	ft_rush_name(int k, int x, int y)
 		ft_putstr("[rush-01] [");
 	if (k == 2 || k == 15 || k == 5 || k == 12)
 		ft_putstr("[rush-02] [");
-	if (k == 4 || k == 14)
+	if (k == 3 || k == 13)
 		ft_putstr("[rush-03] [");
-	if (k == 11)
+	if (k == 10)
 		ft_putstr("[rush-04] [");
 	ft_putdimensions(x, y);
 	if (k == 5)
@@ -75,8 +75,8 @@ void	ft_rush_name(int k, int x, int y)
 		ft_putdimensions(x, y);
 		ft_putstr(" || [rush-04] [");
 	}
-	if (k == 14)
+	if (k == 13)
 		ft_putstr(" || [rush-04] [");
-	if (k > 5)
+	if (k >= 5 && k != 10)
 		ft_putdimensions(x, y);
 }

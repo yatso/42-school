@@ -87,7 +87,7 @@ char	*ft_rush02(int x, int y)
 	i = 0;
 	row = 1;
 	compare_str = (char*)malloc((x * y) + y + 1);
-	while (row < y)
+	while (row <= y)
 	{
 		if (row == 1)
 		{
@@ -101,6 +101,7 @@ char	*ft_rush02(int x, int y)
 		}
 		row++;
 	}
-	compare_str = rush02_store_last_line(x, i, compare_str);
+	if (y != 1)
+		compare_str = rush02_store_last_line(x, i, compare_str);
 	return (compare_str);
 }
